@@ -6,9 +6,11 @@
 }
 
 /*@formatter: off*/
+
 * { box-sizing: border-box;margin: 0;font-family: sans-serif;}
 body {margin: 0 auto;  background-color: var(--noroff-off-white);}
-main, section, aside { padding: 40px 20px;}
+main { padding: 120px 20px 40px 20px; }
+section, aside { padding: 40px 20px; }
 main button { background-color: var(--noroff-red); border: 0; color: var(--noroff-off-white); }
 nav, footer section { padding: 10px;}
 ul, li, a {list-style-type: none;text-decoration: none; overflow: hidden;}
@@ -18,12 +20,7 @@ nav { display: flex; }
 nav button { display: none; }
 .menu {     transform: translateY(0%);}
 main > section > div label {padding: 10px 0;}
-
-main > section > div {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-}
+main > section > div {display: flex;flex-direction: column;justify-items: center;}
 
 main > section > div > div {
     max-width: 100%;
@@ -33,11 +30,10 @@ main > section > div > div {
     gap: 2%;
 }
 
-main > section > div > div input { width: 85%; height: 37px; }
-main > section > div > div button {width: 13%;}
-
-/**//**/ /*  GENERIC */ /**//**/
+main > section > div > div input { width: 80%; }
+main > section > div > div button {width: 29%;}
 aside section#posts { display: flex; align-content: center; }
+
 section#posts div:first-child {
     background-color: var(--noroff-red);
     width: 100px;
@@ -57,8 +53,14 @@ section#posts div:last-child {padding-left: 20px;}
 section#posts h2 a { color: var(--noroff-dark-black); text-decoration: underline;}
 section#posts h2 a:hover { color: var(--noroff-light-black); }
 
+.mobileHidden {display: flex; max-width: 100%; gap: 20px;}
+.mobileHidden div {width: 33%;}
+main input,
+.mobileHidden div button { height: 37px;}
 
-
+@media (max-width: 580px) {
+    .mobileHidden { display: none; }
+}
 
 
 

@@ -12,9 +12,8 @@ header {
     display: flex;
     justify-content: space-between;
 }
-
-.logo {padding: 10px;width: 100%;}
-.nav-desktop, .navMobile { display: none; }
+.nav-desktop { display: none; }
+.logo {padding: 15px;width: 100%;}
 .nav-mobile {
     overflow-x: hidden;
     margin: 0;
@@ -24,23 +23,27 @@ header {
     max-width: 100%;
 }
 
-.nav-mobile {display: flex;position: absolute;top: 0;z-index: 2;}
+.nav-mobile {display: block;position: absolute;top: 0;z-index: 2;}
 .nav-mobile,
 .nav-mobile div {justify-content: space-between;align-items: center;min-width: 100%;}
 .nav-mobile span {
+    display: block;
     text-align: right;
-    display: flex;
-    flex-direction: column;
-    margin: 15px 0;
     cursor: pointer;
 }
+.nav-mobile span img { display: inline; padding-top: 20px; }
+.nav-mobile span strong { padding:0 14px 20px 0;}
+.nav-mobile span > * {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
 
-.nav-mobile,
 .nav-mobile ul#toggle-element {position: fixed;}
-.nav-mobile ul#toggle-element {background-color: var(--noroff-off-white);}
 .nav-mobile,
 .nav-mobile ul#toggle-element,
 .nav-mobile ul#toggle-element li {width: 100%;display: flex;padding: 10px 0;}
+.nav-mobile ul#toggle-element {background-color: var(--noroff-off-white);}
 .nav-mobile ul#toggle-element,
 .nav-mobile ul#toggle-element li {
     flex-direction: column;
@@ -50,18 +53,19 @@ header {
     /* border-bottom: 2px solid var(--noroff-light-black); /**/
 }
 
-.nav-mobile ul#toggle-element li a {padding: 12px;font-weight: bold;}
-.nav-mobile span i { padding: 0 5px 5px 0; }
 .nav-mobile span strong { font-size: 13px; }
+
+.nav-mobile ul#toggle-element li,
+.nav-mobile ul#toggle-element li a {padding: 12px;font-weight: bold; margin-bottom: 3px;}
+
 ul li:hover,
-ul li.active { background-color: var(--noroff-red); }
+ul li.active { background-color: var(--noroff-red); transition: .5s linear; font-weight: bold; }
 ul li.active a { color: var(--noroff-off-white); }
 ul li:hover a { color: var(--noroff-dark-black); }
-ul li:hover { transition: .5s linear; }
 
 /* This applies from 600px and up */
-@media (min-width: 650px) {
-    .nav-mobile, #toggle-element {display: none;}
+@media (min-width: 580px) {
+    .nav-mobile, .nav-mobile ul#toggle-element {display: none;}
     .nav-desktop {width: 60%;display: flex;justify-content: space-between;}
     .nav-desktop ul {
         width: 100%;
