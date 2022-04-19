@@ -6,11 +6,11 @@
 }
 
 /*@formatter: off*/
-
 * { box-sizing: border-box;margin: 0;font-family: sans-serif;}
 body {margin: 0 auto;  background-color: var(--noroff-off-white);}
 main { padding: 120px 20px 40px 20px; }
 section, aside { padding: 40px 20px; }
+button {font-weight: bold; font-size: 16px;}
 main button { background-color: var(--noroff-red); border: 0; color: var(--noroff-off-white); }
 nav, footer section { padding: 10px;}
 ul, li, a {list-style-type: none;text-decoration: none; overflow: hidden;}
@@ -18,7 +18,7 @@ label, p {overflow: hidden;max-width: 70ch;padding: 10px 0; line-height: 163%; c
 h1, h2 { padding: 5px 0;}
 nav { display: flex; }
 nav button { display: none; }
-.menu {     transform: translateY(0%);}
+.menu { transform: translateY(0%);}
 main > section > div label {padding: 10px 0;}
 main > section > div {display: flex;flex-direction: column;justify-items: center;}
 

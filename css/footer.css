@@ -11,12 +11,14 @@ footer {
 }
 .logo a { width: 100%; padding: 10px;}
 .logo, li, a { cursor: pointer; list-style-type: none;text-decoration: none;overflow: hidden;color: var(--noroff-dark-black); }
-footer p { color: var(--noroff-dark-black); }
 footer { width: 100%; }
+footer p { color: var(--noroff-dark-black); }
 
-section#footerMobile,
-section#footerMobile div {display: flex; width: 100%; justify-content: space-evenly; align-items: center; }
-section#footerMobile div {flex-direction: column; }
+section#footerMobile { display: inline-flex; width:100%; position: fixed; bottom: 0; left:0; right:0; background-color: var(--noroff-red);}
+section#footerMobile div {flex: 1 auto; display:flex; flex-direction: row; justify-content: space-evenly; align-items: center; }
+section#footerMobile div a { flex: 1 auto; display: flex; flex-direction: column; justify-content: space-evenly; align-items: center; }
+section#footerMobile div a img {width: 34px; padding-bottom: 5px; }
+section#footerMobile div a span {font-weight: lighter;}
 
 /* This applies from 600px and down */
 @media (max-width: 580px) {
