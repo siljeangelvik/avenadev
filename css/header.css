@@ -14,6 +14,7 @@ header {
 }
 .nav-desktop { display: none; }
 .logo {padding: 15px;width: 100%;}
+.logo-link { z-index: 99;}
 .nav-mobile {
     overflow-x: hidden;
     margin: 0;
@@ -44,13 +45,8 @@ header {
 .nav-mobile ul#toggle-element,
 .nav-mobile ul#toggle-element li {width:100%;display: flex; padding: 0; flex-direction: column;align-items: center;justify-content: flex-start;text-decoration: none;}
 .nav-mobile ul#toggle-element li { width:100%; display:flex; padding:10px 0;border: 1px solid var(--noroff-dark-black); }
-
-
 .nav-mobile ul#toggle-element { height: 420px; /*border-top: 1px solid var(--noroff-dark-black); /**/ /* border-bottom: 1px solid var(--noroff-dark-black); /**/}
-
-
 .nav-mobile span strong { font-size: 13px; }
-
 .nav-mobile ul#toggle-element li,
 .nav-mobile ul#toggle-element li a {padding: 12px;font-weight: bold; margin-bottom: 4px; }
 .nav-mobile ul li { background-color: var(--noroff-off-white); }

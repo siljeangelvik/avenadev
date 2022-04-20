@@ -48,6 +48,14 @@ Halvtårsrapport, Eksamen, Ferie, Bergen, Campus etc..
 10 <=>  November
 11 <=>  Desember
 
+####EKSAMENS-PROSJEKT:
+- Bruke headless cms WP for å hente API
+- Form validering / js1-ca + denne ca / regex
+- Sende parameter
+- Fint design
+- Maze brukertesting 
 
+
+heroku, strapi
 
 
