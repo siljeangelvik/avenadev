@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/styles.css">
     <script type="text/javascript" src="../js/burgermenu.js" defer></script>
-    <link rel="stylesheet" href="https://material.io/resources/icons/">
-    <link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -47,7 +45,7 @@
 
 <main>
     <section class="searchbar">
-        <h1>Enkelt søk deg frem</h1>
+        <h1>Enkelt søk deg frem i årshjulet</h1>
         <div>
             <label for="site-search"></label>
             <div>
@@ -72,7 +70,7 @@
 </main>
 
 <aside>
-    <section id="mainStudent">Loading...</section>
+    <section id="outputStudent">Loading...</section>
 </aside>
 
 <footer>
@@ -105,7 +103,7 @@
             </a>
         </div>
         <div id="studentFilter">
-            <a href="#">
+            <a href="student.html">
                 <img src="../media/material-icons/student.svg" alt="student-page">
                 <span>Student</span>
             </a>
@@ -126,8 +124,8 @@
 </footer>
 
 <script>
-    const url = "https://www.avena.dev/cms/wp-json/wp/v2/posts";
-    //const url = "https://www.avena.dev/cms/wp-json/wp/v2/pages";
+    const url = "https://www.avena.dev/cms/wp-json/wp/v2/categories";
+    //const url = "https://www.avena.dev/cms/wp-json/wp/v2/categories";
     fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -138,7 +136,7 @@
             console.error('Error:', error);
         });
 
-    const output = document.querySelector("aside");
+    const output = document.querySelector("#outputStudent");
 
     function listPosts(posts) {
         let allPosts = "";
@@ -151,7 +149,7 @@
             <span>${post.date}</span>
             </div>
             <div>
-            <h2><a href="post.html?id=${post.id}">
+            <h2><a href="post.html?id=${post.id[72]}">
             ${post.title.rendered}
             </a></h2>
             <p>${post.excerpt.rendered}</p>
