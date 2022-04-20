@@ -74,3 +74,9 @@ ul li:hover a { color: var(--noroff-off-white); }
         flex: 1;
     }
 }
+
+
+@media (max-width: 590px) {
+    ul#toggle-element *,
+    span#toggle-btn { display: none; visibility: hidden; background-color: transparent; }
+}

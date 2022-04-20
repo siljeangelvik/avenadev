@@ -18,6 +18,8 @@ port: 8889 <br>
 * start/end date: https://stackoverflow.com/questions/38835824/how-to-find-upcoming-event-in-array-based-on-current-time
 * mobile-first css: https://zellwk.com/blog/how-to-write-mobile-first-css/
 
+<hr>
+
 ## kategorier:
 Student, Ansatt, (Styret)
 ## tags?

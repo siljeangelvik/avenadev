@@ -7,7 +7,6 @@ footer {
     height: 80px;
     display: flex;
     justify-content: space-between;
-    background-color: var(--noroff-red);
 }
 .logo a { width: 100%; padding: 10px;}
 .logo, li, a { cursor: pointer; list-style-type: none;text-decoration: none;overflow: hidden;color: var(--noroff-dark-black); }
@@ -27,7 +26,8 @@ section#footerMobile div a span {font-weight: lighter;}
 
 /* This applies from 600px and up */
 @media (min-width: 580px) {
-    footer {background-color: transparent;}
+    footer {background-color: var(--noroff-red);
+    ;}
     section#footerMobile { display: none; }
     section#footerMobile {background-color: var(--noroff-red);}
     section#footerDesktop,

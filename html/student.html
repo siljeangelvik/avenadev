@@ -72,7 +72,10 @@
 </main>
 
 <aside>
-    <section id="outputPosts">Loading...</section>
+    <section id="mainStudent">Loading...</section>
+    <section id="mainAnsatt">Loading...</section>
+    <section id="mainPosts">Loading...</section>
+    <section id="asidePost">Loading...</section>
 </aside>
 
 <footer>
@@ -138,7 +141,7 @@
             console.error('Error:', error);
         });
 
-    const output = document.querySelector("#outputPosts");
+    const output = document.querySelector("aside");
 
     function listPosts(posts) {
         let allPosts = "";
