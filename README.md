@@ -21,8 +21,9 @@ port: 8889 <br>
 <hr>
 
 ## kategorier:
-Student, Ansatt, (Styret)
-## tags?
+#### Roller: Student, Ansatt, (Styret)
+#### Dato: 0-11 (months),
+#### Tags: keywords
 
 ### date : date (!keywords / !search words (?))
 **start** and **end** date for <br>
