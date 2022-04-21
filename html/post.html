@@ -127,7 +127,7 @@
     const queryString = window.location.search;
     const id = new URLSearchParams(queryString).get('id');
     if (!id) {
-        window.location = "index.html";
+        window.location = "posts.html";
     }
 
     const urlPost = `https://www.avena.dev/cms/wp-json/wp/v2/posts/${id}`;

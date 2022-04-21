@@ -50,7 +50,7 @@
             <label for="site-search"></label>
             <div>
                 <input type="search" id="site-search" name="q"
-                       placeholder="&nbsp;Eksempel: Oslo, Campus, Front-End, Studiestart...">
+                       placeholder="&nbsp;Eksempel: Oslo, Front-End, Studiestart...">
                 <button>Search</button>
             </div>
         </div>
@@ -58,10 +58,10 @@
 
     <section class="mobileHidden">
         <div>
-            <button class="outputStudents" type="button">Student</button>
+            <button type="button">Student</button>
         </div>
         <div>
-            <button class="outputEmployee" type="button">Ansatt</button>
+            <button type="button">Ansatt</button>
         </div>
         <div>
             <button type="button">Styret</button>
@@ -82,8 +82,8 @@
     <section id="footerDesktop">
         <div>
             <ul>
-                <li><a href="student.html">Student</a></li>
-                <li><a href="#">Ansatt</a></li>
+                <li><a href="posts.html">Student</a></li>
+                <li><a href="posts.html">Ansatt</a></li>
                 <li><a href="#">Styret</a></li>
             </ul>
         </div>
@@ -103,13 +103,13 @@
             </a>
         </div>
         <div id="studentFilter">
-            <a href="student.html">
+            <a href="posts.html">
                 <img src="../media/material-icons/student.svg" alt="student-page">
                 <span>Student</span>
             </a>
         </div>
         <div id="employeeFilter">
-            <a href="#">
+            <a href="posts.html">
                 <img src="../media/material-icons/employee.svg" alt="employee-page">
                 <span>Ansatt</span>
             </a>
@@ -124,9 +124,10 @@
 </footer>
 
 <script>
-    const url = "https://www.avena.dev/cms/wp-json/wp/v2/posts";
+    const urlPosts = "https://www.avena.dev/cms/wp-json/wp/v2/posts";
     //const url = "https://www.avena.dev/cms/wp-json/wp/v2/pages";
-    fetch(url)
+
+    fetch(urlPosts)
         .then(response => response.json())
         .then(data => {
             //console.log('Success:', data);
@@ -143,7 +144,7 @@
         for (let post of posts) {
             console.log(post);
             allPosts +=
-                ` <section id="posts">
+                `<section id="posts">
          <!-- date respresents the date of an event or start date off assignments, reports etc. -->
             <div class="date-box">
             <span>${post.date}</span>

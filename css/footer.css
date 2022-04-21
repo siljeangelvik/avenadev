@@ -13,7 +13,7 @@ footer {
 footer { width: 100%; }
 footer p { color: var(--noroff-dark-black); }
 
-section#footerMobile { display: inline-flex; width:100%; position: absolute; bottom: 0; left:0; right:0; background-color: var(--noroff-red);}
+section#footerMobile { display: inline-flex; width:100%; position: fixed; bottom: 0; left:0; right:0; background-color: var(--noroff-red);}
 section#footerMobile div {flex: 1 auto; display:flex; flex-direction: row; justify-content: space-evenly; align-items: center; }
 section#footerMobile div a { flex: 1 auto; display: flex; flex-direction: column; justify-content: space-evenly; align-items: center; }
 section#footerMobile div a img {width: 34px; padding-bottom: 5px; }
