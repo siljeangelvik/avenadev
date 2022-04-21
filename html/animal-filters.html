@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<fieldset>
+    <legend>Choose animal:</legend>
+    <input type="radio" value="all" name="animal" checked><label for="all">All</label>
+    <input type="radio" value="cat" name="animal"><label for="cat">Cat</label>
+    <input type="radio" value="dog" name="animal"><label for="dog">Dog</label>
+    <input type="radio" value="weasel" name="animal"><label for="mustela">Mustela</label>
+
+</fieldset>
+
+<fieldset>
+    <legend>Choose Colour:</legend>
+    <input type="checkbox" value="red" id="red"><label for="red">Red</label>
+    <input type="checkbox" value="black" id="black"><label for="black">Black</label>
+    <input type="checkbox" value="white" id="white"><label for="white">White</label>
+    <input type="checkbox" value="gray" id="gray"><label for="gray">Gray</label>
+</fieldset>
+
+<ul id="animals"></ul>
+
+<script>
+    const animals = [
+        {type:"dog", name:"Rex", colour:"black"},
+        {type:"dog", name:"Fido", colour:"white"},
+        {type:"dog", name:"Rover", colour:"gray"},
+        {type:"dog", name:"Voff", colour:"white,gray"},
+        {type:"dog", name:"Spot", colour:"white,black"},
+        {type:"cat", name:"Tux", colour:"black,white"},
+        {type:"cat", name:"Night", colour:"gray"},
+        {type:"cat", name:"Pus", colour:"black,white"},
+        {type:"cat", name:"Tiger", colour:"white,red"},
+        {type:"cat", name:"Bastet", colour:"black"},
+        {type:"weasel", name:"Fred", colour:"red,white"},
+    ];
+
+    const out = document.querySelector ("#animals")
+    let listAnimals = (list) => {
+        out.innerHTML = "";
+        for (animal of list) {
+            let colour = animal.colour.split(","); // make array from string
+            //console.log(colour);
+            //let cOut = (colour.length) === 1?colour[0]:"multicoloured";
+            let cOut = (colour.length) === 1?colour[0]:colour.join(" and ");
+            out.innerHTML += `<li>${animal.name} is a ${cOut} ${animal.type}</li>`;
+        }
+    }
+
+    listAnimals(animals);
+
+    let animalRadioButtons = document.querySelectorAll("input[name='animal']");
+    let colourRed = document.querySelector("input#red");
+    let colourBlack = document.querySelector("input#black");
+    let colourWhite = document.querySelector("input#white");
+    let colourGray = document.querySelector("input#gray");
+
+    let filterMe = () => {
+        //console.log("Let's filter!");
+        let filteredList = [];
+
+        // Filter based on animals
+        // Find which radiobutton is checked
+        let animalChosen; // Clear any previous choices
+        for (let btn of animalRadioButtons) {
+            if (btn.checked) animalChosen = btn.value;
+        }
+        //console.log (animalChosen);
+        if (animalChosen === "all") {
+            filteredList = animals.slice(); // Make a copy to "protect" the original list
+        } else {
+            // Filter ot those animals with type equal to the type chosen
+            filteredList = animals.filter((item)=>item.type === animalChosen);
+        }
+
+        // THEN: Filter based on colour (based on the checkboxes)
+        let filterColours = []; // list of colours to look for, start fresh each time
+        if (colourRed.checked) filterColours.push("red");
+        if (colourBlack.checked) filterColours.push("black");
+        if (colourWhite.checked) filterColours.push("white");
+        if (colourGray.checked) filterColours.push("gray");
+
+        //console.log (filterColours);
+
+        if (filterColours.length !== 0) { // If none is chosen, all is selected!
+            // Run through the list now (filteredList)
+            // and get the (list of) colour(s) of the animal,
+            // and compare that to the colours in the filterColours list
+            // and only return true it it's a match.
+            filteredList = filteredList.filter((animal)=>{
+                let animalColours = animal.colour.split(","); // make array from string
+                //console.log(`Let's check ${animal.name} wtih ${animalColours}`);
+                for (c of animalColours) {
+                    //console.log (`Check if ${c} is in ${filterColours}`)
+                    if (filterColours.includes(c)) return true;
+                }
+                return false;
+            });
+        }
+
+        // After all filtering, list the filtered list
+        listAnimals(filteredList);
+    }
+
+    // Set eventlistener for all Radiobuttons in the animalRadioButtons nodelist
+    for (let r of animalRadioButtons) r.addEventListener("change", filterMe);
+    // Set eventlistener for all CheckBoxes found on the page
+    for (let c of document.querySelectorAll("input[type='checkbox']")) c.addEventListener("change", filterMe);
+
+</script>
+
+</body>
+
+</html>
