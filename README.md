@@ -27,6 +27,14 @@ https://www.avena.dev/cms/wp-json/wp/v2/tribe_events?per_page=50
 
 
 ###OPTIMIZATION FEEDBACK: <br>
+****VALIDATORS:**** <br>
+HTML: https://validator.w3.org/nu/?doc=https%3A%2F%2Fnoroffquality-api.netlify.app%2F <br>
+ACCESSIBLE COLORS: https://accessible-colors.com/
+
+***AA COMPLIANT:*** <br>
+Required contrast ratio: 4.5 <br>
+Our contrast ratio: 4.54 
+
 ***WARNINGS:***
 * **Section lacks heading:** <br>
 6 warnings som sier at det mangler headings på de gjeldene "sections",
