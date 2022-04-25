@@ -8,7 +8,7 @@
 /*@formatter: off*/
 * { box-sizing: border-box;margin: 0;font-family: sans-serif;}
 body {margin: 0 auto;  background-color: var(--noroff-off-white);}
-main { padding: 120px 20px 40px 20px; }
+main { padding: 120px 20px 40px 20px; margin-top: 100px;}
 section, aside { padding: 40px 20px; }
 button {font-weight: bold; font-size: 16px;}
 main button { background-color: var(--noroff-red); border: 0; color: var(--noroff-off-white); }

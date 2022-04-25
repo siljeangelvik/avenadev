@@ -1,0 +1,50 @@
+/* @formatter:off */
+* { /* border: 1px solid var(--noroff-dark-black); /**/ }
+#toggle-element {display:block;}
+
+header {
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: var(--noroff-red);
+    width:100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+}
+.logo {padding: 15px;width: 100%;}
+.logo-link { z-index: 99;}
+
+ul li:hover,
+ul li.active { list-style-type: none; background-color: var(--noroff-red); transition: .5s linear; font-weight: bold; }
+ul li.active a { color: var(--noroff-off-white); }
+ul li:hover a { color: var(--noroff-off-white); }
+
+/* This applies from 600px and up */
+@media (min-width: 580px) {
+    .nav-desktop {width: 60%;display: flex;justify-content: space-between;}
+    .nav-desktop ul {
+        background-color: var(--noroff-red);
+
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-desktop ul li,
+    .nav-desktop ul li a {
+        text-decoration: none;
+        font-family: sans-serif;
+        flex: 1;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .nav-desktop { display: none;}
+
+    ul#toggle-element *,
+    span#toggle-btn { display: none; visibility: hidden; background-color: transparent; }
+}
