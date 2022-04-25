@@ -33,7 +33,7 @@ ACCESSIBLE COLORS: https://accessible-colors.com/
 
 ***AA COMPLIANT:*** <br>
 Required contrast ratio: 4.5 <br>
-Our contrast ratio: 4.54 
+Our *lowest* contrast ratio: 4.54
 
 ***WARNINGS:***
 * **Section lacks heading:** <br>
