@@ -15,9 +15,9 @@ fetch(url)
 function listData(posts) {
     out.innerHTML = " ";
     posts.forEach((post) => {
-      //  console.log(post.title.length, post.title);
+        //  console.log(post.title.length, post.title);
         out.innerHTML +=
-        `<div>
+            `<div>
                 <div id="dateBox">
                     <a href="detail.html?id=${post.id}">
                         <span>${post.date}</span>
@@ -48,10 +48,10 @@ const myStudBtn = document.querySelectorAll(".filterStudent");
 //console.log(myStudBtn)
 for (let item of myStudBtn) {
     item.addEventListener("click", () => {
-      // console.log("skal filtrere ut studenter", allPosts.length )
+        // console.log("skal filtrere ut studenter", allPosts.length )
         let filteredList = [];
         allPosts.forEach((post) => {
-           // console.log(post.tribe_events_cat)
+            // console.log(post.tribe_events_cat)
             if (post.tribe_events_cat.includes(95)) {
                 filteredList.push(post);
             }
@@ -91,7 +91,6 @@ for (let item of myStyretBtn) {
             }
         })
         listData(filteredList);
+// console.log(filteredList)
     })
 }
-
-// console.log(filteredList)
